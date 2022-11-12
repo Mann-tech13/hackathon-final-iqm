@@ -10,20 +10,6 @@ import './App.css'
 import { Home } from './components/home/Home'
 
 function App() {
-
-  return (
-    <div className="App">
-
-      
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Dashboard />}/>
-        </Routes>
-      </Router>
-
-    </div>
-  );
-
 	const [user, setLoginUser] = useState({})
 	return (
 		<div className='App'>
