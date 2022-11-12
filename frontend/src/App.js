@@ -1,7 +1,4 @@
-
-
 import Header from './components/header/header';
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Dashboard from "./components/Dashboard/dashboard"
 

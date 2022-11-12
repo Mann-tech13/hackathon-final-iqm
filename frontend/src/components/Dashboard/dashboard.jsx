@@ -22,7 +22,7 @@ function Dashboard() {
     // }).catch(function (error) {
     //     console.error(error);
     // });
-    const url = "https://newsapi.org/v2/everything?q=tesla&from=2022-10-12&sortBy=publishedAt&apiKey=4305a04eeaf746ad949f84e528cba4b5"
+    const url = "https://newsapi.org/v2/everything?q=Entertainment&apiKey=4305a04eeaf746ad949f84e528cba4b5"
 
     useEffect(() => {
         const fetchData = async () => {
@@ -35,25 +35,29 @@ function Dashboard() {
         fetchData();
     }, [url]);
 
+    const handleClick = (e) => {
+        console.log(e)
+    }
+
     return (
         <div>
             <div className="container">
-                <div className="news">
+                <div className="news" onClick={handleClick}>
                     NEWS
                 </div>
-                <div className="ENTERTAINMENT">
+                <div className="ENTERTAINMENT" onClick={handleClick}>
                     ENTERTAINMENT
                 </div>
-                <div className="technology">
+                <div className="technology" onClick={handleClick}>
                     TECHNOLOGY
                 </div>
-                <div className="travel">
+                <div className="travel" onClick={handleClick}>
                     TRAVEL
                 </div>
-                <div className="food">
+                <div className="food" onClick={handleClick}>
                     FOOD
                 </div>
-                <div className="sports">
+                <div className="sports" onClick={handleClick}>
                     SPORTS
                 </div>
             </div>
@@ -64,7 +68,7 @@ function Dashboard() {
                         news.map((response) => {
                             return (
                                 <div className="data-news">
-                                    <h3 className='h3-heading'>{response.author}</h3>
+                                    <h3 className='h3-heading'>{response.title}</h3>
                                     <img src={response.urlToImage} className="imgs" alt="" />
                                     <div className="content">
                                         {response.description}
