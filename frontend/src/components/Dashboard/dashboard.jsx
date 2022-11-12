@@ -3,9 +3,6 @@ import Header from '../header/header'
 import { Home } from '../home/Home'
 import axios from 'axios'
 
-import "./dashboard.css"
-import Header from "../header/header";
-import { Home } from '../home/Home';
 
 
 import './dashboard.css'
