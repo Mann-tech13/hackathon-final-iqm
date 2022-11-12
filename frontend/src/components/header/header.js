@@ -26,46 +26,9 @@ function NavScrollExample() {
 	
 
 	return (
-<<<<<<< HEAD
-		<div>
-			<Navbar className='main' bg='light' expand='lg'>
-				{/* {console.log(accountHolder)} */}
-				<Container fluid>
-					<img className='icon' src={TCQ}></img>
-					<Navbar.Brand href='#'></Navbar.Brand>
-					<Navbar.Toggle aria-controls='navbarScroll' />
-					<Navbar.Collapse id='navbarScroll'>
-						<Nav
-							className='me-auto my-2 my-lg-0'
-							style={{ maxHeight: '100px' }}
-							navbarScroll
-						>
-							<Nav.Link href='#action1'>Home</Nav.Link>
-							<Nav.Link href='#action2'>News Letters</Nav.Link>
-
-						</Nav>
-						<Button
-							className='btn'
-							variant='danger'
-							onClick={() => navigate('/Login')}
-						>
-							Login
-						</Button>
-						<Button
-							className='btn'
-							variant='light'
-							onClick={() => navigate('/register')}
-						>
-							Register
-						</Button>
-					</Navbar.Collapse>
-				</Container>
-			</Navbar>
-		</div>
-=======
 		<Navbar className='main' bg='light' expand='lg'>
 			<Container fluid>
-				<img className='icon' src={TCQ}></img>
+				<img className='icon' src={TCQ} />
 				<Navbar.Brand href='#'></Navbar.Brand>
 				<Navbar.Toggle aria-controls='navbarScroll' />
 				<Navbar.Collapse id='navbarScroll'>
@@ -113,7 +76,6 @@ function NavScrollExample() {
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
->>>>>>> 3fd9cbeb36171bc6e76d0135004a92b71c88f91a
 	)
 }
 
