@@ -1,27 +1,27 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const paymentRoutes=require("./Routes/payment");
-
+const express = require('express')
+const cors = require('cors')
+const dotenv = require('dotenv')
+const paymentRoutes = require('./Routes/payment')
+const account_database = require('./database/account')
 //initialize paymentapp
-const app = express();
+const app = express()
 
 //env variables
 
-dotenv.config();
+dotenv.config()
 
 //middlewares
 
-app.use(express.json());
-app.use(cors());
+app.use(express.json())
+app.use(cors())
 
 //routes
-app.use("/api/payment/", paymentRoutes);
+app.use('/api/payment/', paymentRoutes)
 
 //paymentapp listening
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => console.log(`listening on port ${port}...`));
+const port = process.env.PORT || 8080
+app.listen(port, () => console.log(`listening on port ${port}...`))
 
 app.use(express.json())
 app.use(express.urlencoded())
