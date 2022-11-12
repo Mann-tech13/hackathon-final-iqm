@@ -3,10 +3,12 @@ import Header from '../header/header'
 import { Home } from '../home/Home'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
-
+import { Subscribe } from '../subscribe/subscribe'
 import './dashboard.css'
+import {useNavigate} from 'react-router-dom'
 
 function Dashboard() {
+	let navigate = useNavigate()
     const [news, setNews] = useState([])
     const [categoryData, setCategoryData] = useState("ALL")
     const [searched, setSearched] = useState("")
@@ -19,6 +21,10 @@ function Dashboard() {
         setCategoryData(data)
         console.log(categoryData)
     }
+	const navigateToSubscribe = () => {
+		// 👇️ navigate to /contacts
+		navigate('/subscribe');
+	  };
     const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4305a04eeaf746ad949f84e528cba4b5`
     // console.log(categoryData);
     useEffect(() => {
@@ -94,7 +100,7 @@ function Dashboard() {
 					})} */}
 				</div>
 				<div className='readMore'>
-					<Button className='bttn' variant='danger'>
+					<Button onClick={navigateToSubscribe} className='bttn' variant='danger'>
 						Read More
 					</Button>
 				</div>

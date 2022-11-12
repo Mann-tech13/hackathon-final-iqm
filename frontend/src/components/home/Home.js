@@ -3,8 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import React from 'react'
 import './home.css'
 import Button from 'react-bootstrap/Button'
+import { useNavigate } from 'react-router-dom'
 
 export const Home = () => {
+	let navigate = useNavigate()
 	return (
 		<div className='home'>
 			<div className='head'>
@@ -14,7 +16,7 @@ export const Home = () => {
 				<p>The Perfect News Letter for you !</p>
 			</div>
 			<br />
-			<Button className='bttn' variant='danger'>
+			<Button  onClick={() => navigate('/register')} className='bttn' variant='danger'>
 				Sign Up
 			</Button>
 		</div>
