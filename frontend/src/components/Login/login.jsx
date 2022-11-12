@@ -38,7 +38,7 @@ function Login({ setLoginUser }) {
 	}
 	return (
 		<div className='login'>
-			<div class='login-form'>
+			<div className='login-form'>
 				<h1>Login</h1>
 				<input
 					type='text'
