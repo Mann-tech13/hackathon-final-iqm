@@ -1,82 +1,74 @@
 import React, { useState, useEffect } from 'react'
+import Header from '../header/header'
+import { Home } from '../home/Home'
 import axios from 'axios'
-import "./dashboard.css"
+import './dashboard.css'
 
 function Dashboard() {
-    const [news, setNews] = useState([])
-    // const options = {
-    //     method: 'GET',
-    //     url: 'https://extract-news.p.rapidapi.com/v0/article',
-    //     params: {
-    //         url: 'https://www.theverge.com/2020/4/17/21224728/bill-gates-coronavirus-lies-5g-covid-19'
-    //     },
-    //     headers: {
-    //         'X-RapidAPI-Key': '5182f24adcmsh95a5bfed385303dp104125jsnd9ca2b9a7921',
-    //         'X-RapidAPI-Host': 'extract-news.p.rapidapi.com'
-    //     }
-    // };
+	const [news, setNews] = useState([])
+	const [categoryData, setCategoryData] = useState('ALL')
 
-    // axios.request(options).then(function (response) {
-    //     console.log(response);
-    //     setNews([...news, ...response.data.article.images])
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
-    const url = "https://newsapi.org/v2/everything?q=tesla&from=2022-10-12&sortBy=publishedAt&apiKey=4305a04eeaf746ad949f84e528cba4b5"
+	const handleClick = (e) => {
+		// e.preventDefault();
+		// console.log(e.target.innerHTML)
+		const data = e.target.innerHTML
+		console.log(data)
+		setCategoryData(data)
+		console.log(categoryData)
+	}
+	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4305a04eeaf746ad949f84e528cba4b5`
+	// console.log(categoryData);
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await axios.get(url)
+			if (response) {
+				console.log(response.data.articles)
+				setNews(response.data.articles)
+			}
+		}
+		fetchData()
+	}, [url])
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await axios.get(url);
-            if (response) {
-                console.log(response.data.articles)
-                setNews([...news, ...response.data.articles])
-            }
-        };
-        fetchData();
-    }, [url]);
+	return (
+		<div>
+			<Header />
+			<Home />
+			<div className='container'>
+				<div className='news cursor' onClick={handleClick}>
+					NEWS
+				</div>
+				<div className='entertainment cursor' onClick={handleClick}>
+					ENTERTAINMENT
+				</div>
+				<div className='technology cursor' onClick={handleClick}>
+					TECHNOLOGY
+				</div>
+				<div className='travel cursor' onClick={handleClick}>
+					TRAVEL
+				</div>
+				<div className='food cursor' onClick={handleClick}>
+					FOOD
+				</div>
+				<div className='sports cursor' onClick={handleClick}>
+					SPORTS
+				</div>
+			</div>
 
-    return (
-        <div>
-            <div className="container">
-                <div className="news">
-                    NEWS
-                </div>
-                <div className="ENTERTAINMENT">
-                    ENTERTAINMENT
-                </div>
-                <div className="technology">
-                    TECHNOLOGY
-                </div>
-                <div className="travel">
-                    TRAVEL
-                </div>
-                <div className="food">
-                    FOOD
-                </div>
-                <div className="sports">
-                    SPORTS
-                </div>
-            </div>
-
-            <div className="news-container">
-                <div className="api-container">
-                    {
-                        news.map((response) => {
-                            return (
-                                <div className="data-news">
-                                    <h3 className='h3-heading'>{response.author}</h3>
-                                    <img src={response.urlToImage} className="imgs" alt="" />
-                                    <div className="content">
-                                        {response.description}
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
-        </div>
-    )
+			<div className='news-container'>
+				<div className='api-container'>
+					{news.map((response) => {
+						return (
+							<div className='data-news'>
+								<h3 className='h3-heading'>{response.title}</h3>
+								<img src={response.urlToImage} className='imgs' alt='' />
+								<div className='content'>{response.description}</div>
+							</div>
+						)
+					})}
+				</div>
+			</div>
+		</div>
+	)
 }
 
 export default Dashboard
