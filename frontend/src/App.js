@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Dashboard from './components/Dashboard/dashboard'
 import Register from './components/Register/register'
 import Login from './components/Login/login'
-import Footer from './components/Footer/footer'
+import Footer from './components/footer/footer'
 
 import './App.css'
 import { Home } from './components/home/Home'
+import { Subscribe } from './components/subscribe/subscribe'
 
 function App() {
 	const [user, setLoginUser] = useState({})
@@ -22,6 +23,7 @@ function App() {
 						element={<Login setLoginUser={setLoginUser} />}
 					/>
 					<Route exact path='/register' element={<Register />} />
+          <Route exact path ='/subscribe' element ={<Subscribe/>} />
 				</Routes>
 			</Router>
 			<Footer />
