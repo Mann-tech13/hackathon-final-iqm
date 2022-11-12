@@ -36,7 +36,7 @@ function NavScrollExample() {
 						style={{ maxHeight: '100px' }}
 						navbarScroll
 					>
-						<Nav.Link href='#action1'>Home</Nav.Link>
+						<Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
 						<Nav.Link href='#action2'>News Letters</Nav.Link>
 					</Nav>
 					{value ? (
