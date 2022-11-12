@@ -40,3 +40,23 @@
     padding: 15px;
     font-size: 18px;
 }
+
+.search{
+    width: 400px;
+    border-radius: 12px;
+    padding: 5px 20px;
+    border: none;
+}
+
+.search:focus{
+    outline: none;
+}
+
+.search-btn{
+    background-color: #ffffff;
+    background: none;
+    border: none;
+    padding: 5px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    /* border-radius: 10px; */
+}

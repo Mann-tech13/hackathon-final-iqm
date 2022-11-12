@@ -5,6 +5,7 @@ import "./dashboard.css"
 function Dashboard() {
     const [news, setNews] = useState([])
     const [categoryData, setCategoryData] = useState("ALL")
+    const [searched, setSearched] = useState("")
     
     const handleClick = (e) => {
         // e.preventDefault();
@@ -27,7 +28,13 @@ function Dashboard() {
         fetchData();
     }, [url]);
 
+    const handleSearchClick = () => {
+        setCategoryData(searched)
+    }
+    const handleChange = (e) => {
+        setSearched(e.target.value)
 
+    }
     return (
         <div>
             <div className="container">
@@ -49,6 +56,12 @@ function Dashboard() {
                 <div className="sports" onClick={handleClick}>
                     SPORTS
                 </div>
+
+                <div className="searchplace">
+                    <input type="text" className="search" placeholder='Search' onChange={handleChange}/>
+                    <input type="submit" value="🔎" className="search-btn" onClick={handleSearchClick}/>
+                    </div>
+
             </div>
 
             <div className="news-container">
