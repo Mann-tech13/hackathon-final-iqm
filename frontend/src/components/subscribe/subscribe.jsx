@@ -2,11 +2,45 @@ import React from 'react'
 import "../subscribe/subscribe.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import Button from 'react-bootstrap/Button'
+import axios from "axios";
 
 
 export const Subscribe = () => {
-
-
+    const initPayment = (data) => {
+		const options = {
+			key: "rzp_test_r7yTXyX3j4hhtR",
+			amount: 100,
+			currency: "INR",
+			description: "Test Transaction",
+			order_id: data.id,
+			handler: async (response) => {
+				try {
+                    console.log("Hello")
+					const verifyUrl = "http://localhost:5000/api/payment/verify";
+					const { data } = await axios.post(verifyUrl, response);
+					console.log(data);
+				} catch (error) {
+					console.log(error);
+				}
+			},
+			theme: {
+				color: "#3399cc",
+			},
+		};
+		const rzp1 = new window.Razorpay(options);
+		rzp1.open();
+	};
+    const handlePayment = async() => {
+        try{
+            const orderUrl = "http://localhost:5000/api/payment/orders";
+			const { data } = await axios.post(orderUrl, { amount: 100 });
+			console.log(data);
+			initPayment(data.data);
+        }
+        catch(error){
+            console.log(error);
+        }
+    };
     return (
         <div className='sub'>
 
@@ -44,7 +78,8 @@ export const Subscribe = () => {
                 </div>
             </div>
             <br />
-            <Button  className='bttn' variant='danger'>
+
+            <Button  onClick={handlePayment} className='bttn' variant='danger'>
                 Subscribe Now !
             </Button>
 
