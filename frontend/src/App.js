@@ -11,12 +11,6 @@ import { Home } from './components/home/Home'
 import { Subscribe } from './components/subscribe/subscribe'
 
 function App() {
-<<<<<<< HEAD
-
-  
-
-=======
->>>>>>> a66fbe6d373efc8997059f5a3726597a75879c6a
 	const [user, setLoginUser] = useState({})
 	return (
 		<div className='App'>
