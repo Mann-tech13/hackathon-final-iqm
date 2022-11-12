@@ -51,13 +51,6 @@
 	border-radius: 0.3em;
 }
 
-<<<<<<< HEAD
-.content{
-    width: 80%;
-    padding: 15px;
-    font-size: 18px;
-}
-
 .search{
     width: 400px;
     border-radius: 12px;
@@ -77,8 +70,6 @@
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     /* border-radius: 10px; */
 }
-=======
 .readMore {
 	text-align: center;
 }
->>>>>>> 6cb4be7513a1a308dc5fd98496d3b45a1fb48d9e
