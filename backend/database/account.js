@@ -23,7 +23,13 @@ const User = new mongoose.model('User', userSchema)
 
 database.post('/register', (req, res) => {
 	const { name, email, password } = req.body
-	console.log(name)
+
+
+
+	database.get('/getData', (req, res) => {
+		res.json(name)
+	})
+
 	User.findOne({ email: email }, (err, user) => {
 		if (user) {
 			res.send({ message: 'User already registerd' })
