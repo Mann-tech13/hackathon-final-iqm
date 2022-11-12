@@ -17,13 +17,13 @@
     text-align: left;
 }
 .head{
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid #dc3545;
 
 }
 .price{
     font-family: 'Oswald', sans-serif;
 
-    border: 2px solid red;
+    border: 2px solid #dc3545;
     padding-left: 15%;
 }
 .bttn{
