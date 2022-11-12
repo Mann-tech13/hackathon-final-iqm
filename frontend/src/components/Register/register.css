@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+.register {
+	padding: 0;
+	margin: 0;
+	background-color: black;
+	/* background: url('./bg3.jpg') no-repeat 49% 76%;
+	background-size: cover; */
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: poppins;
+	position: relative;
+}
+
+.form-reg {
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+	padding: 40px 26px;
+	width: 300px;
+	/*height: 300px;*/
+	margin: 3% 40%;
+	background-color: #fff;
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(248, 13, 13, 0.15);
+	border-radius: 10px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.textinsidereg {
+	font-size: 14px;
+	text-align: center;
+	color: black;
+}
+
+.form-reg > h1 {
+	color: black;
+	font-size: 35px;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.form-reg > input {
+	background: transparent;
+	/* color: #fff; */
+	border: 2px solid rgba(248, 13, 13, 0.15);
+	border-radius: 6px;
+	padding: 14px 16px;
+	margin-bottom: 30px;
+}
+input:-internal-autofill-selected {
+	appearance: menulist-button;
+	background-image: none !important;
+	background-color: -internal-light-dark(
+		rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 0)
+	) !important;
+	color: fieldtext !important;
+}
+.form-reg input:focus {
+	outline: none;
+	border-color: #fff;
+}
+
+.form-reg > .button {
+	background: linear-gradient(45deg, #f52828, #f52828);
+	/* color: #fff; */
+	border: none;
+	border-radius: 6px;
+	padding: 14px 16px;
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
