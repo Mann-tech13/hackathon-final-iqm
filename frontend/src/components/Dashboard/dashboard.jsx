@@ -5,44 +5,29 @@ import axios from 'axios'
 import Button from 'react-bootstrap/Button'
 import { Subscribe } from '../subscribe/subscribe'
 import './dashboard.css'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Dashboard() {
-<<<<<<< HEAD
+	let navigate = useNavigate()
 	const [news, setNews] = useState([])
 	const [categoryData, setCategoryData] = useState('ALL')
 	const [searched, setSearched] = useState('')
-=======
-	let navigate = useNavigate()
-    const [news, setNews] = useState([])
-    const [categoryData, setCategoryData] = useState("ALL")
-    const [searched, setSearched] = useState("")
-    
-    const handleClick = (e) => {
-        // e.preventDefault();
-        // console.log(e.target.innerHTML)
-        const data = e.target.innerHTML
-        console.log(data)
-        setCategoryData(data)
-        console.log(categoryData)
-    }
+
 	const navigateToSubscribe = () => {
 		// 👇️ navigate to /contacts
-		navigate('/subscribe');
-	  };
-    const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4305a04eeaf746ad949f84e528cba4b5`
-    // console.log(categoryData);
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await axios.get(url);
-            if (response) {
-                console.log(response.data.articles)
-                setNews(response.data.articles)
-            }
-        };
-        fetchData();
-    }, [url]);
->>>>>>> e62b5a4e07f58af9151bec98a1e7c1456ae0e2c5
+		navigate('/subscribe')
+	}
+	// console.log(categoryData);
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await axios.get(url)
+			if (response) {
+				console.log(response.data.articles)
+				setNews(response.data.articles)
+			}
+		}
+		fetchData()
+	}, [url])
 
 	const handleClick = (e) => {
 		// e.preventDefault();
@@ -138,7 +123,11 @@ function Dashboard() {
 					})} */}
 				</div>
 				<div className='readMore'>
-					<Button onClick={navigateToSubscribe} className='bttn' variant='danger'>
+					<Button
+						onClick={navigateToSubscribe}
+						className='bttn'
+						variant='danger'
+					>
 						Read More
 					</Button>
 				</div>
