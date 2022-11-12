@@ -44,7 +44,7 @@ function Login({ setLoginUser }) {
 					type='text'
 					name='name'
 					value={user.name}
-					placeholder='Enter your Email'
+					placeholder='Enter your Name'
 					onChange={handleChange}
 				/>
 				<input

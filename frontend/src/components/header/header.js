@@ -24,6 +24,13 @@ function NavScrollExample() {
 		fetchData()
 	}, [])
 
+	// const onChangeValue = (e) => {
+	// 	const reValue = ""
+	// 	e.preventDefault()
+	// 	setValue(reValue)
+	// 	console.log(value)
+	// }
+
 	return (
 		<Navbar className='main' bg='light' expand='lg'>
 			<Container fluid>
@@ -45,9 +52,7 @@ function NavScrollExample() {
 							<Button
 								className='btn'
 								variant='danger'
-								onClick={() => {
-									setValue('')
-								}}
+								onClick={() => setValue("")}
 							>
 								Logout
 							</Button>
