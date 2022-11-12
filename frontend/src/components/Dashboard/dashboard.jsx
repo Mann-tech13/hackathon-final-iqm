@@ -4,40 +4,29 @@ import "./dashboard.css"
 
 function Dashboard() {
     const [news, setNews] = useState([])
-    // const options = {
-    //     method: 'GET',
-    //     url: 'https://extract-news.p.rapidapi.com/v0/article',
-    //     params: {
-    //         url: 'https://www.theverge.com/2020/4/17/21224728/bill-gates-coronavirus-lies-5g-covid-19'
-    //     },
-    //     headers: {
-    //         'X-RapidAPI-Key': '5182f24adcmsh95a5bfed385303dp104125jsnd9ca2b9a7921',
-    //         'X-RapidAPI-Host': 'extract-news.p.rapidapi.com'
-    //     }
-    // };
-
-    // axios.request(options).then(function (response) {
-    //     console.log(response);
-    //     setNews([...news, ...response.data.article.images])
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
-    const url = "https://newsapi.org/v2/everything?q=Entertainment&apiKey=4305a04eeaf746ad949f84e528cba4b5"
-
+    const [categoryData, setCategoryData] = useState("ALL")
+    
+    const handleClick = (e) => {
+        // e.preventDefault();
+        // console.log(e.target.innerHTML)
+        const data = e.target.innerHTML
+        console.log(data)
+        setCategoryData(data)
+        console.log(categoryData)
+    }
+    const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4305a04eeaf746ad949f84e528cba4b5`
+    // console.log(categoryData);
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get(url);
             if (response) {
                 console.log(response.data.articles)
-                setNews([...news, ...response.data.articles])
+                setNews(response.data.articles)
             }
         };
         fetchData();
     }, [url]);
 
-    const handleClick = (e) => {
-        console.log(e)
-    }
 
     return (
         <div>
