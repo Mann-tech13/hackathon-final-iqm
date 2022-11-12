@@ -6,13 +6,12 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { useNavigate } from 'react-router-dom'
 
-
-
-
 import TCQ from '../../images/tcq.png'
 
 function NavScrollExample() {
 	let navigate = useNavigate()
+
+	
 	return (
 		<Navbar className='main' bg='light' expand='lg'>
 			<Container fluid>
@@ -54,6 +53,7 @@ function NavScrollExample() {
 					>
 						Login
 					</Button>
+					
 					<Button
 						className='btn'
 						variant='light'
