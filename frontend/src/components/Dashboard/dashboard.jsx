@@ -57,17 +57,18 @@ function Dashboard() {
 			</div>
 
 			<div className='news-container'>
-				{news.slice(0, 12).map((response) => {
-					return (
-						<div className='data-news'>
-							<h3 className='h3-heading'>{response.title}</h3>
-							<img src={response.urlToImage} className='imgs' alt='' />
-							<div className='content'>{response.description}</div>
-						</div>
-					)
-				})}
-				{/* Activate IF Logic when Subscription Implemented */}
-				{/* {news.slice(0, 12).map((response) => {
+				<div className='api-container'>
+					{news.slice(0, 12).map((response) => {
+						return (
+							<div className='data-news'>
+								<h3 className='h3-heading'>{response.title}</h3>
+								<img src={response.urlToImage} className='imgs' alt='' />
+								<div className='content'>{response.description}</div>
+							</div>
+						)
+					})}
+					{/* Activate IF Logic when Subscription Implemented */}
+					{/* {news.slice(0, 12).map((response) => {
 						return (
 							<div className='data-news'>
 								<h3 className='h3-heading'>{response.title}</h3>
@@ -76,11 +77,12 @@ function Dashboard() {
 							</div>
 						)
 					})} */}
-			</div>
-			<div className='readMore'>
-				<Button className='bttn' variant='danger'>
-					Read More
-				</Button>
+				</div>
+				<div className='readMore'>
+					<Button className='bttn' variant='danger'>
+						Read More
+					</Button>
+				</div>
 			</div>
 		</div>
 	)
