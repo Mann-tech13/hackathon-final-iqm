@@ -7,6 +7,7 @@
     padding: 20px;
     border-bottom: 1px solid #eee;
     background-color: #f7f7f7;
+    max-width: 100% !important;
 }
 
 .api-container{
