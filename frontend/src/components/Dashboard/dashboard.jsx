@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../header/header'
+import { Home } from '../home/Home'
 import axios from 'axios'
 import './dashboard.css'
 
@@ -31,23 +32,24 @@ function Dashboard() {
 	return (
 		<div>
 			<Header />
+			<Home />
 			<div className='container'>
-				<div className='news' onClick={handleClick}>
+				<div className='news cursor' onClick={handleClick}>
 					NEWS
 				</div>
-				<div className='ENTERTAINMENT' onClick={handleClick}>
+				<div className='entertainment cursor' onClick={handleClick}>
 					ENTERTAINMENT
 				</div>
-				<div className='technology' onClick={handleClick}>
+				<div className='technology cursor' onClick={handleClick}>
 					TECHNOLOGY
 				</div>
-				<div className='travel' onClick={handleClick}>
+				<div className='travel cursor' onClick={handleClick}>
 					TRAVEL
 				</div>
-				<div className='food' onClick={handleClick}>
+				<div className='food cursor' onClick={handleClick}>
 					FOOD
 				</div>
-				<div className='sports' onClick={handleClick}>
+				<div className='sports cursor' onClick={handleClick}>
 					SPORTS
 				</div>
 			</div>
