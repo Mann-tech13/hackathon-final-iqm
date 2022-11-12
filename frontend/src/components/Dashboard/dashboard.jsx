@@ -37,9 +37,20 @@ function Dashboard() {
 				console.log(response.data.articles)
 				setNews(response.data.articles)
 			}
-		}
-		fetchData()
-	}, [url])
+		};
+		fetchData();
+	}, [url]);
+
+	useEffect(() => {
+		const fetchData1 = async () => {
+			const response1 = await axios.get(url1);
+			if (response1) {
+				console.log(response1.data.articles)
+				setNews1(response1.data.articles)
+			}
+		};
+		fetchData1();
+	}, [url1]);
 
 	const handleSearchClick = () => {
 		setCategoryData(searched)
@@ -88,30 +99,34 @@ function Dashboard() {
 			</div>
 
 			<div className='news-container'>
-				<div className='api-container'>
-					{news.slice(0, 12).map((response) => {
-						return (
-							<div className='data-news'>
-								<h3 className='h3-heading'>{response.title}</h3>
-								<img src={response.urlToImage} className='imgs' alt='' />
-								<div className='authorLink'>{response.author}</div>
-								<div className='content'>{response.description}</div>
-								<a href={response.url} target='_blank'>
-									<div className='btn'>Read More...</div>
-								</a>
-							</div>
-						)
-					})}
-					{/* Activate IF Logic when Subscription Implemented */}
-					{/* {news.slice(0, 12).map((response) => {
-						return (
-							<div className='data-news'>
-								<h3 className='h3-heading'>{response.title}</h3>
-								<img src={response.urlToImage} className='imgs' alt='' />
-								<div className='content'>{response.description}</div>
-							</div>
-						)
-					})} */}
+				<div className='dflex'>
+					<div className='api-container'>
+						{news.slice(0, 12).map((response) => {
+							return (
+								<div className='data-news'>
+									<a href={response.url}><img  src={response.urlToImage} className='imgs'  alt='' /></a>
+									<h5 className='h3-heading'>{response.title}</h5>
+									{/* <div className='content'>{response.description}</div> */}
+								</div>
+							)
+						})}
+
+					</div>
+
+					<div className='trending'>
+						<div className='txt'>
+							<h3>Trending Top 5</h3>
+						</div>
+					{news1.slice(0, 5).map((response1) => {
+							return (
+								<div className='data-news1'>
+									<a href={response1.url}><img src={response1.urlToImage} className='imgs' alt='' /></a>
+									<h6 className='h3-heading'>{response1.title}</h6>
+									<hr/>
+								</div>
+							)
+						})}
+					</div>
 				</div>
 
 				<div className='readMore'>
