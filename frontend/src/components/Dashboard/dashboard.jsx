@@ -3,8 +3,9 @@ import Header from '../header/header'
 import { Home } from '../home/Home'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
-
+import { Subscribe } from '../subscribe/subscribe'
 import './dashboard.css'
+import {useNavigate} from 'react-router-dom'
 
 function Dashboard() {
     const [news, setNews] = useState([])
@@ -94,7 +95,7 @@ function Dashboard() {
 					})} */}
 				</div>
 				<div className='readMore'>
-					<Button className='bttn' variant='danger'>
+					<Button onClick={navigateToSubscribe} className='bttn' variant='danger'>
 						Read More
 					</Button>
 				</div>
