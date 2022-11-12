@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './register.css'
 
+
 function Register() {
+	// const [userLoginData, setUserLoginData] = useState("")
 	let navigate = useNavigate()
 	const [user, setUser] = useState({
 		name: '',
@@ -29,45 +31,50 @@ function Register() {
 			alert('false')
 		}
 	}
-
+	// console.log("HI" + userLoginData)
 	return (
-		<div className='register'>
-			<div className='form-reg'>
-				<h1 className='ch1'>Register</h1>
-				<input
-					type='text'
-					name='name'
-					value={user.name}
-					placeholder='Enter your Name'
-					onChange={handleChange}
-				/>
-				<input
-					type='text'
-					name='email'
-					value={user.email}
-					placeholder='Enter your Email'
-					onChange={handleChange}
-				/>
-				<input
-					type='password'
-					name='password'
-					value={user.password}
-					placeholder='Enter your password'
-					onChange={handleChange}
-				/>
-				<input
-					type='password'
-					name='reEnterPassword'
-					value={user.reEnterPassword}
-					placeholder='Re-enter your password'
-					onChange={handleChange}
-				/>
-				<div className='button' onClick={registration}>
-					Register
+		<>
+				
+				<div className='register'>
+					<div className='form-reg'>
+						<h1 className='ch1'>Register</h1>
+						<input
+							type='text'
+							name='name'
+							value={user.name}
+							placeholder='Enter your Name'
+							onChange={handleChange}
+						/>
+						<input
+							type='text'
+							name='email'
+							value={user.email}
+							placeholder='Enter your Email'
+							onChange={handleChange}
+						/>
+						<input
+							type='password'
+							name='password'
+							value={user.password}
+							placeholder='Enter your password'
+							onChange={handleChange}
+						/>
+						<input
+							type='password'
+							name='reEnterPassword'
+							value={user.reEnterPassword}
+							placeholder='Re-enter your password'
+							onChange={handleChange}
+						/>
+						<div className='button' onClick={registration}>
+							Register
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
+		</>
 	)
 }
 
 export default Register
+// export {MyName};
+// export {userLoginData};

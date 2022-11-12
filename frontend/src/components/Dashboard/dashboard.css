@@ -31,6 +31,10 @@
 .h3-heading {
 	padding: 5px;
 }
+.authorLink {
+	padding: 5%;
+	font-weight: bold;
+}
 .imgs {
 	border-radius: 20px;
 	width: 100%;
@@ -59,11 +63,33 @@
 	padding-left: 10%;
 	padding-right: 10%;
 	border-radius: 0.3em;
+<<<<<<< HEAD
 	font-family: 'Oswald', sans-serif;
 	margin: 5% 0;
 
+=======
+>>>>>>> 33cca8559702f71799e17006262b71d7b9b1e590
 }
 
+.search {
+	width: 400px;
+	border-radius: 12px;
+	padding: 5px 20px;
+	border: none;
+}
+
+.search:focus {
+	outline: none;
+}
+
+.search-btn {
+	background-color: #ffffff;
+	background: none;
+	border: none;
+	padding: 5px;
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+	/* border-radius: 10px; */
+}
 .readMore {
 	text-align: center;
 }

@@ -5,9 +5,11 @@ import './home.css'
 import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
 
+
 export const Home = () => {
 	let navigate = useNavigate()
 	return (
+		
 		<div className='home'>
 			<div className='head'>
 				<h1>Get Informed </h1>

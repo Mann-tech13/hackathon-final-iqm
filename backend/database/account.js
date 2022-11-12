@@ -23,6 +23,11 @@ const User = new mongoose.model('User', userSchema)
 
 database.post('/register', (req, res) => {
 	const { name, email, password } = req.body
+
+	// database.get('/getData', (req, res) => {
+	// 	res.json(name)
+	// })
+
 	User.findOne({ email: email }, (err, user) => {
 		if (user) {
 			res.send({ message: 'User already registerd' })
@@ -44,10 +49,13 @@ database.post('/register', (req, res) => {
 })
 
 database.post('/login', (req, res) => {
-	const { email, password } = req.body
-	User.findOne({ email: email }, (err, user) => {
+	const { name, password } = req.body
+	User.findOne({ name: name }, (err, user) => {
 		if (user) {
 			if (password === user.password) {
+				database.get('/getData', (req, res) => {
+					res.json(name)
+				})
 				res.send({ message: 'Login Successfull', user: user })
 			} else {
 				res.send({ message: "Password didn't match" })
