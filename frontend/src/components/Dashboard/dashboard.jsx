@@ -12,23 +12,6 @@ function Dashboard() {
 	const [news, setNews] = useState([])
 	const [categoryData, setCategoryData] = useState('ALL')
 	const [searched, setSearched] = useState('')
-
-	const navigateToSubscribe = () => {
-		// 👇️ navigate to /contacts
-		navigate('/subscribe')
-	}
-	// console.log(categoryData);
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await axios.get(url)
-			if (response) {
-				console.log(response.data.articles)
-				setNews(response.data.articles)
-			}
-		}
-		fetchData()
-	}, [url])
-
 	const handleClick = (e) => {
 		// e.preventDefault();
 		// console.log(e.target.innerHTML)
@@ -44,6 +27,21 @@ function Dashboard() {
 			const response = await axios.get(url)
 			if (response) {
 				// console.log(response.data.articles)
+				setNews(response.data.articles)
+			}
+		}
+		fetchData()
+	}, [url])
+	const navigateToSubscribe = () => {
+		// 👇️ navigate to /contacts
+		navigate('/subscribe')
+	}
+	// console.log(categoryData);
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await axios.get(url)
+			if (response) {
+				console.log(response.data.articles)
 				setNews(response.data.articles)
 			}
 		}
