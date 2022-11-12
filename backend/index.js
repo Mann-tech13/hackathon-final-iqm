@@ -31,4 +31,3 @@ app.use(account_database)
 app.listen(8000, () => {
 	console.log('BE started at port 8000')
 })
->>>>>>> 5aa3ad54d6a32cdd8becbc6aaf7f31c8f3509c00
