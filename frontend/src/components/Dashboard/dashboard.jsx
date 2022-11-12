@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./dashboard.css"
+import Header from "../header/header";
+import { Home } from '../home/Home';
+
 
 function Dashboard() {
     const [news, setNews] = useState([])
@@ -30,6 +33,8 @@ function Dashboard() {
 
     return (
         <div>
+            <Header/>
+            <Home/>
             <div className="container">
                 <div className="news" onClick={handleClick}>
                     NEWS

@@ -9,8 +9,7 @@ function App() {
   return (
     <div className="App">
 
-      <Header/>
-      <Home/>
+      
       <Router>
         <Routes>
           <Route exact path="/" element={<Dashboard />}/>
