@@ -6,7 +6,7 @@ import './login.css'
 function Login({ setLoginUser }) {
 	let navigate = useNavigate()
 	const [user, setUser] = useState({
-		email: '',
+		name: '',
 		password: '',
 	})
 	const handleChange = (e) => {
@@ -42,8 +42,8 @@ function Login({ setLoginUser }) {
 				<h1>Login</h1>
 				<input
 					type='text'
-					name='email'
-					value={user.email}
+					name='name'
+					value={user.name}
 					placeholder='Enter your Email'
 					onChange={handleChange}
 				/>
