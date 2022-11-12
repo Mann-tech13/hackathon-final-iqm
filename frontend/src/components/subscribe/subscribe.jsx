@@ -2,17 +2,11 @@ import React from 'react'
 import "../subscribe/subscribe.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import Button from 'react-bootstrap/Button'
-import {useNavigate} from 'react-router-dom'
 
 
 export const Subscribe = () => {
 
-    const navigate = useNavigate();
 
-  const navigateToSubscribe = () => {
-    // 👇️ navigate to /contacts
-    navigate('/subscribe');
-  };
     return (
         <div className='sub'>
 

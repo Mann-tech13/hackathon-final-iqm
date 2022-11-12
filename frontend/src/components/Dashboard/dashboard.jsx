@@ -8,6 +8,7 @@ import './dashboard.css'
 import {useNavigate} from 'react-router-dom'
 
 function Dashboard() {
+	let navigate = useNavigate()
     const [news, setNews] = useState([])
     const [categoryData, setCategoryData] = useState("ALL")
     const [searched, setSearched] = useState("")
@@ -20,6 +21,10 @@ function Dashboard() {
         setCategoryData(data)
         console.log(categoryData)
     }
+	const navigateToSubscribe = () => {
+		// 👇️ navigate to /contacts
+		navigate('/subscribe');
+	  };
     const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4305a04eeaf746ad949f84e528cba4b5`
     // console.log(categoryData);
     useEffect(() => {
