@@ -62,8 +62,6 @@ function Register() {
 					placeholder='Re-enter your password'
 					onChange={handleChange}
 				/>
-				<div className='button'>Login</div>
-				<div className='textinsidereg'>or</div>
 				<div className='button' onClick={registration}>
 					Register
 				</div>
