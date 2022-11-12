@@ -2,14 +2,17 @@ import React from 'react'
 import "../subscribe/subscribe.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import Button from 'react-bootstrap/Button'
+import Header from '../header/header'
 
 
 export const Subscribe = () => {
 
 
     return (
+        <div>
+        <Header/>
         <div className='sub'>
-
+        
             <div className='head'>
 
                 <h1>Get exclusive content with TCQ Premium</h1>
@@ -49,6 +52,7 @@ export const Subscribe = () => {
             </Button>
 
 
+        </div>
         </div>
     )
 }
