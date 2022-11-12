@@ -1,24 +1,30 @@
-import Header from './components/header/header';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Dashboard from "./components/Dashboard/dashboard"
+import React, { useState } from 'react'
+import Header from './components/header/header'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Dashboard from './components/Dashboard/dashboard'
+import Register from './components/Register/register'
+import Login from './components/Login/login'
 
-import './App.css';
-import { Home } from './components/home/Home';
+import './App.css'
+import { Home } from './components/home/Home'
 
 function App() {
-  return (
-    <div className="App">
-
-      <Header/>
-      <Home/>
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Dashboard />}/>
-        </Routes>
-      </Router>
-
-    </div>
-  );
+	const [user, setLoginUser] = useState({})
+	return (
+		<div className='App'>
+			<Router>
+				<Routes>
+					<Route exact path='/' element={<Dashboard />} />
+					<Route
+						exact
+						path='/login'
+						element={<Login setLoginUser={setLoginUser} />}
+					/>
+					<Route exact path='/register' element={<Register />} />
+				</Routes>
+			</Router>
+		</div>
+	)
 }
 
-export default App;
+export default App
