@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from '../header/header'
 import { Home } from '../home/Home'
 import axios from 'axios'
-
-
+import Button from 'react-bootstrap/Button'
 
 import './dashboard.css'
 
@@ -58,8 +57,17 @@ function Dashboard() {
 			</div>
 
 			<div className='news-container'>
-				<div className='api-container'>
-					{news.map((response) => {
+				{news.slice(0, 12).map((response) => {
+					return (
+						<div className='data-news'>
+							<h3 className='h3-heading'>{response.title}</h3>
+							<img src={response.urlToImage} className='imgs' alt='' />
+							<div className='content'>{response.description}</div>
+						</div>
+					)
+				})}
+				{/* Activate IF Logic when Subscription Implemented */}
+				{/* {news.slice(0, 12).map((response) => {
 						return (
 							<div className='data-news'>
 								<h3 className='h3-heading'>{response.title}</h3>
@@ -67,8 +75,12 @@ function Dashboard() {
 								<div className='content'>{response.description}</div>
 							</div>
 						)
-					})}
-				</div>
+					})} */}
+			</div>
+			<div className='readMore'>
+				<Button className='bttn' variant='danger'>
+					Read More
+				</Button>
 			</div>
 		</div>
 	)

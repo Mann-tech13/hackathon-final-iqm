@@ -44,3 +44,13 @@
 	padding: 15px;
 	font-size: 18px;
 }
+.bttn {
+	width: 40%;
+	padding-left: 10%;
+	padding-right: 10%;
+	border-radius: 0.3em;
+}
+
+.readMore {
+	text-align: center;
+}

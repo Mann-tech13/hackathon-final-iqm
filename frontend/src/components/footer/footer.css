@@ -1,13 +1,20 @@
 footer {
-    flex: 0 0 auto;
-    color: white;
-    background-color: black;
-    width: 100vw;
-  }
-
-
+	flex: 0 0 auto;
+	color: white;
+	background-color: black;
+	width: 100vw;
+	text-align: center;
+	margin: auto;
+}
 .content {
-    align-items: center;
+	align-items: center;
+}
 
-} 
-
+a {
+	padding: 10px;
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	color: #dc3545;
+}
