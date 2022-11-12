@@ -43,7 +43,6 @@ function NavScrollExample() {
 							<Nav.Link href='#action2'>News Letters</Nav.Link>
 
 						</Nav>
-
 						<Button
 							className='btn'
 							variant='danger'
