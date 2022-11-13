@@ -14,6 +14,7 @@ import axios from 'axios'
 function NavScrollExample() {
 	let navigate = useNavigate()
 	const [value, setValue] = useState('')
+	console.log(value)
 	const fetchData = async () => {
 		const { data } = await axios.get('http://localhost:8000/getData')
 		setValue(data)
