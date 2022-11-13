@@ -159,6 +159,7 @@ function Dashboard({ setBoolean }) {
 						}
 					</div>
 				</div>
+				{setBoolean == undefined ? (
 
 				<div className='readMore'>
 					<Button
@@ -169,6 +170,9 @@ function Dashboard({ setBoolean }) {
 						Read More
 					</Button>
 				</div>
+				):(
+					<div className=""></div>
+				)}
 			</div>
 		</div>
 	)
