@@ -48,7 +48,7 @@ function NavScrollExample() {
 						navbarScroll
 					>
 						<Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
-						<Nav.Link href='#action2'>News Letters</Nav.Link>
+						
 					</Nav>
 					{value ? (
 						<div>

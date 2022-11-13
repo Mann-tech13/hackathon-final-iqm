@@ -68,7 +68,7 @@ export const Subscribe = () => {
             <div className='ben'>
                 <br />
                 <div>
-                    <h3>TCQ Premium Benifits</h3>
+                    <h3>TCQ Premium Benefits</h3>
                     <br />
                     <div className='p1'>
                         <ul className='list'>
