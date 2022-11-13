@@ -7,7 +7,7 @@ import { Subscribe } from '../subscribe/subscribe'
 import './dashboard.css'
 import { useNavigate } from 'react-router-dom'
 
-function Dashboard({setBoolean}) {
+function Dashboard({ setBoolean }) {
 	let navigate = useNavigate()
 	const [booleans, setBooleans] = useState(false)
 	const [news, setNews] = useState([])
@@ -27,7 +27,7 @@ function Dashboard({setBoolean}) {
 		// 👇️ navigate to /contacts
 		navigate('/subscribe');
 	};
-	
+
 	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4c8c393d068c405a92e2f33f019b09e8`
 	const url1 = `https://newsapi.org/v2/everything?q=trending&apiKey=4c8c393d068c405a92e2f33f019b09e8`
 	// console.log(categoryData);
@@ -63,50 +63,61 @@ function Dashboard({setBoolean}) {
 		<div>
 			<Header />
 			<Home />
-			<div className='container'>
-				<div className='news cursor' onClick={handleClick}>
-					NEWS
-				</div>
-				<div className='ENTERTAINMENT cursor' onClick={handleClick}>
-					ENTERTAINMENT
-				</div>
-				<div className='technology cursor' onClick={handleClick}>
-					TECHNOLOGY
-				</div>
-				<div className='travel cursor' onClick={handleClick}>
-					TRAVEL
-				</div>
-				<div className='food cursor' onClick={handleClick}>
-					FOOD
-				</div>
-				<div className='sports cursor' onClick={handleClick}>
-					SPORTS
-				</div>
 
-				<div className='searchplace'>
-					<input
-						type='text'
-						className='search'
-						placeholder='Search'
-						onChange={handleChange}
-					/>
-					<input
-						type='submit'
-						value='🔎'
-						className='search-btn'
-						onClick={handleSearchClick}
-					/>
-				</div>
-			</div>
+			{setBoolean == undefined ?
+				(
+					<div className=""></div>
+				) :
+				(
+					<div className='container'>
+						<div className='news cursor' onClick={handleClick}>
+							NEWS
+						</div>
+						<div className='ENTERTAINMENT cursor' onClick={handleClick}>
+							ENTERTAINMENT
+						</div>
+						<div className='technology cursor' onClick={handleClick}>
+							TECHNOLOGY
+						</div>
+						<div className='travel cursor' onClick={handleClick}>
+							TRAVEL
+						</div>
+						<div className='food cursor' onClick={handleClick}>
+							FOOD
+						</div>
+						<div className='sports cursor' onClick={handleClick}>
+							SPORTS
+						</div>
+						<div className='searchplace'>
+							<input
+								type='text'
+								className='search'
+								placeholder='Search'
+								onChange={handleChange}
+							/>
+							<input
+								type='submit'
+								value='🔎'
+								className='search-btn'
+								onClick={handleSearchClick}
+							/>
+						</div>
+					</div>
+				)
+			}
+
+
+
+
 
 			<div className='news-container'>
 				<div className='dflex'>
 					<div className='api-container'>
-						
+
 						{setBoolean == undefined ? news.slice(0, 12).map((response) => {
 							return (
 								<div className='data-news'>
-									<a href={response.url}><img  src={response.urlToImage} className='imgs'  alt='' /></a>
+									<a href={response.url}><img src={response.urlToImage} className='imgs' alt='' /></a>
 									<h5 className='h3-heading'>{response.title}</h5>
 									{/* <div className='content'>{response.description}</div> */}
 								</div>
@@ -114,7 +125,7 @@ function Dashboard({setBoolean}) {
 						}) : news.map((response) => {
 							return (
 								<div className='data-news'>
-									<a href={response.url}><img  src={response.urlToImage} className='imgs'  alt='' /></a>
+									<a href={response.url}><img src={response.urlToImage} className='imgs' alt='' /></a>
 									<h5 className='h3-heading'>{response.title}</h5>
 									{/* <div className='content'>{response.description}</div> */}
 								</div>
@@ -128,12 +139,12 @@ function Dashboard({setBoolean}) {
 						<div className='txt'>
 							<h3>Trending Top 5</h3>
 						</div>
-					{ setBoolean == undefined ? news1.slice(0, 5).map((response1) => {
+						{setBoolean == undefined ? news1.slice(0, 5).map((response1) => {
 							return (
 								<div className='data-news1'>
 									<a href={response1.url}><img src={response1.urlToImage} className='imgs' alt='' /></a>
 									<h6 className='h3-heading'>{response1.title}</h6>
-									<hr/>
+									<hr />
 								</div>
 							)
 						}) : news1.map((response1) => {
@@ -141,11 +152,11 @@ function Dashboard({setBoolean}) {
 								<div className='data-news1'>
 									<a href={response1.url}><img src={response1.urlToImage} className='imgs' alt='' /></a>
 									<h6 className='h3-heading'>{response1.title}</h6>
-									<hr/>
+									<hr />
 								</div>
 							)
 						})
-					}
+						}
 					</div>
 				</div>
 
