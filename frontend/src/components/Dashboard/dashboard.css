@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
 .container {
 	display: flex;
 	flex-wrap: wrap;
@@ -14,45 +16,58 @@
 }
 .cursor:hover {
 	font-weight: bold !important;
+	color: #dc3545;
 }
 .api-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
-	font-weight: 400;
+	justify-content: flex-start;
+	font-weight: 200;
+	/* font-size: small; */
 	width: 80%;
-	margin: 0 auto;
+	margin: 0 0 0 -3% ;
+	border-right: 2px solid #dc3545;
+
 }
 .h3-heading {
-	padding: 5px;
+	padding: 8px;
 }
 .authorLink {
 	padding: 5%;
 	font-weight: bold;
 }
 .imgs {
-	width: 100%;
-	margin: 0 auto;
+	border-radius: 1px;
+	width: 95%;
+	height:60%;
+	margin-top: 3px;
+	padding: 1px;
+
 }
 
 .data-news {
-	width: 30%;
+	width: 31%;
 	border: 1px solid #eee;
-	margin: 15px 0;
-	border-radius: 20px;
-	padding: 5px;
+	margin: 25px 10px 0;
+	border-radius: 10px;
+	padding: 3px;
+	height: 50vh;
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .content {
 	width: 80%;
 	padding: 15px;
-	font-size: 18px;
+	font-size: 10px;
 }
 .bttn {
 	width: 40%;
 	padding-left: 10%;
 	padding-right: 10%;
 	border-radius: 0.3em;
+	font-family: 'Oswald', sans-serif;
+	margin: 5% 0;
+
 }
 
 .search {
@@ -76,4 +91,24 @@
 }
 .readMore {
 	text-align: center;
+}
+
+.dflex{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 5%;
+	
+}
+.trending{
+	width: 20%;
+	margin-top: 1%;
+
+}
+.txt{
+	font-family: 'Oswald', sans-serif;
+	color: #dc3545;
+	border-bottom: 2px solid black;
+	padding-bottom: 1%;
+	margin-bottom: 5%;
 }

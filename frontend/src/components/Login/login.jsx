@@ -23,19 +23,20 @@ function Login({ setLoginUser }) {
 			navigate('/')
 		})
 	}
-	const handleClick = async (e) => {
-		e.preventDefault()
-		const response = await fetch('http://localhost:8000/sendemail', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				user,
-			}),
-		})
-		console.log(response)
-	}
+
+	// const handleClick = async (e) => {
+	// 	e.preventDefault()
+	// 	const response = await fetch('http://localhost:8000/sendemail', {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+	// 		body: JSON.stringify({
+	// 			user,
+	// 		}),
+	// 	})
+	// 	console.log(response)
+	// }
 	return (
 		<div className='login'>
 			<div className='login-form'>
@@ -44,7 +45,7 @@ function Login({ setLoginUser }) {
 					type='text'
 					name='name'
 					value={user.name}
-					placeholder='Enter your Email'
+					placeholder='Enter your Name'
 					onChange={handleChange}
 				/>
 				<input
@@ -54,9 +55,9 @@ function Login({ setLoginUser }) {
 					placeholder='Enter your password'
 					onChange={handleChange}
 				/>
-				<div className='forgot-pwd' onClick={handleClick}>
+				{/* <div className='forgot-pwd' onClick={handleClick}>
 					Forgot Password?
-				</div>
+				</div> */}
 				<div className='button' onClick={login}>
 					Login
 				</div>
