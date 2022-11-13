@@ -57,7 +57,7 @@ database.post('/login', (req, res) => {
 					console.log(name)
 					res.json(name)
 				})
-				res.send({ message: 'Login Successfull', user: user })
+				res.send({ message: 'Login Successful', user: user })
 			} else {
 				res.send({ message: "Password didn't match" })
 			}
