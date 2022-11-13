@@ -48,7 +48,7 @@ function NavScrollExample() {
 					</Nav>
 					{value ? (
 						<div>
-							<div>Hello {value}</div>
+							{/* <div>Hello {value}</div> */}
 							<Button
 								className='btn'
 								variant='danger'

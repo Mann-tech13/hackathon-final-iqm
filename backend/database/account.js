@@ -54,6 +54,7 @@ database.post('/login', (req, res) => {
 		if (user) {
 			if (password === user.password) {
 				database.get('/getData', (req, res) => {
+					console.log(name)
 					res.json(name)
 				})
 				res.send({ message: 'Login Successfull', user: user })
