@@ -1,4 +1,4 @@
-# TCQ : The News Aggregator
+# TCQ : The News Aggregator📰
 
 TCQ is a news aggregator website that smartly curates news from a vast resource of news websites and brings them to the users according to their preferences.
 
@@ -16,20 +16,20 @@ Users can search for any keyword for their desired news articles which includes 
 ### Onboarding👋
 When a user visits the website he can access a limited number of articles for free.
 
-### Sign Up
+### Sign Up 🆕
 A user can sign up to the website by providing their Name, Email-id and desired password for further communication and subscribing to TCQ.
 
-### Log In
+### Log In 👨‍💻
 A user can log in to the website by providing their cresentials.
 
-### Dashboard
+### Dashboard 📑
 The dashboard contains all the news cards with the links to their websites.
 The users can view the latest news and click on the news card links to read the full articles.
 The dashbaord contains latest news from all the categories and many different news websites.
 Search Option is available under this section.
 The Personal Preference Feature is available for the subscribers to view news articles according to their preferences of category.
 
-### Trending
+### Trending 📈
 The trending panel contains all the news from the current topics that are most searched and rated among the news articles. A subscriber can see a detailed view of the trending news.
 
 ### Subscription
