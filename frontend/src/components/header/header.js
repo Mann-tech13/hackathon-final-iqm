@@ -14,6 +14,7 @@ import axios from 'axios'
 function NavScrollExample() {
 	let navigate = useNavigate()
 	const [value, setValue] = useState('')
+	console.log(value)
 	const fetchData = async () => {
 		const { data } = await axios.get('http://localhost:8000/getData')
 		setValue(data)
@@ -24,16 +25,12 @@ function NavScrollExample() {
 		fetchData()
 	}, [])
 
-	if(value != ""){
-		
+	const onChangeValue = (e) => {
+		e.preventDefault()	
+		const reValue = ""
+		setValue(reValue)
+		console.log(value)
 	}
-
-	// const onChangeValue = (e) => {
-	// 	const reValue = ""
-	// 	e.preventDefault()
-	// 	setValue(reValue)
-	// 	console.log(value)
-	// }
 
 	return (
 		<Navbar className='main' bg='light' expand='lg'>
@@ -52,11 +49,11 @@ function NavScrollExample() {
 					</Nav>
 					{value ? (
 						<div>
-							<div>Hello {value}</div>
+							{/* <div>Hello {value}</div> */}
 							<Button
 								className='btn'
 								variant='danger'
-								onClick={() => setValue("")}
+								onClick={onChangeValue}
 							>
 								Logout
 							</Button>
