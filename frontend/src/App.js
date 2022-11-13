@@ -9,12 +9,13 @@ import Footer from './components/footer/footer'
 import './App.css'
 import { Home } from './components/home/Home'
 import { Subscribe } from './components/subscribe/subscribe'
+import SubscriberUserAccount from './subscribedUser/subscriberUserAccount'
 
 function App() {
 	const [user, setLoginUser] = useState({})
 	return (
 		<div className='App'>
-			
+
 			<Router>
 				<Routes>
 					<Route exact path='/' element={<Dashboard />} />
@@ -24,7 +25,8 @@ function App() {
 						element={<Login setLoginUser={setLoginUser} />}
 					/>
 					<Route exact path='/register' element={<Register />} />
-          <Route exact path ='/subscribe' element ={<Subscribe/>} />
+					<Route exact path='/subscribe' element={<Subscribe />} />
+					<Route exact path='/subAcc' element={<SubscriberUserAccount/>}/>
 				</Routes>
 			</Router>
 			<Footer />

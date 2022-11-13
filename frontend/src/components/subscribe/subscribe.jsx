@@ -1,12 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "../subscribe/subscribe.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import Button from 'react-bootstrap/Button'
 import axios from "axios";
 import Header from '../header/header'
+import Dashboard from '../Dashboard/dashboard';
+import {Home} from "../home/Home"
+import Footer from "../footer/footer"
+import SubscriberUserAccount from '../../subscribedUser/subscriberUserAccount';
+import {useNavigate} from "react-router-dom"
 
 
 export const Subscribe = () => {
+    let navigate = useNavigate()
+    const [message, setMessage] = useState("")
+    const [boolean, setBoolean] = useState(false)
     const initPayment = (data) => {
 		const options = {
 			key: "rzp_test_r7yTXyX3j4hhtR",
@@ -16,10 +24,10 @@ export const Subscribe = () => {
 			order_id: data.id,
 			handler: async (response) => {
 				try {
-                    console.log("Hello")
 					const verifyUrl = "http://localhost:5000/api/payment/verify";
 					const { data } = await axios.post(verifyUrl, response);
-					console.log(data);
+					
+                    setMessage(data.message)
 				} catch (error) {
 					console.log(error);
 				}
@@ -35,13 +43,15 @@ export const Subscribe = () => {
         try{
             const orderUrl = "http://localhost:5000/api/payment/orders";
 			const { data } = await axios.post(orderUrl, { amount: 100 });
-			console.log(data);
+			// console.log(data);
+            // setMessage(data)
 			initPayment(data.data);
         }
         catch(error){
             console.log(error);
         }
     };
+    
     return (
         <div>
         <Header/>
@@ -86,11 +96,15 @@ export const Subscribe = () => {
                 Subscribe Now !
             </Button>
 
-
+            {
+            message == "Payment verified successfully" ? 
+                <div>
+                    {navigate("/subAcc")}
+                </div> 
+            : <div></div>}
+            
         </div>
         </div>
     )
 }
-
-
 

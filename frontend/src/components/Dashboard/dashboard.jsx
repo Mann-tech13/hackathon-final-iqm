@@ -7,8 +7,9 @@ import { Subscribe } from '../subscribe/subscribe'
 import './dashboard.css'
 import { useNavigate } from 'react-router-dom'
 
-function Dashboard() {
+function Dashboard({setBoolean}) {
 	let navigate = useNavigate()
+	const [booleans, setBooleans] = useState(false)
 	const [news, setNews] = useState([])
 	const [news1, setNews1] = useState([])
 	const [categoryData, setCategoryData] = useState("ALL")
@@ -27,8 +28,8 @@ function Dashboard() {
 		navigate('/subscribe');
 	};
 	
-	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4305a04eeaf746ad949f84e528cba4b5`
-	const url1 = `https://newsapi.org/v2/everything?q=trending&apiKey=4305a04eeaf746ad949f84e528cba4b5`
+	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4c8c393d068c405a92e2f33f019b09e8`
+	const url1 = `https://newsapi.org/v2/everything?q=trending&apiKey=4c8c393d068c405a92e2f33f019b09e8`
 	// console.log(categoryData);
 	useEffect(() => {
 		const fetchData = async () => {
@@ -101,7 +102,16 @@ function Dashboard() {
 			<div className='news-container'>
 				<div className='dflex'>
 					<div className='api-container'>
-						{news.slice(0, 12).map((response) => {
+						
+						{setBoolean == undefined ? news.slice(0, 12).map((response) => {
+							return (
+								<div className='data-news'>
+									<a href={response.url}><img  src={response.urlToImage} className='imgs'  alt='' /></a>
+									<h5 className='h3-heading'>{response.title}</h5>
+									{/* <div className='content'>{response.description}</div> */}
+								</div>
+							)
+						}) : news.map((response) => {
 							return (
 								<div className='data-news'>
 									<a href={response.url}><img  src={response.urlToImage} className='imgs'  alt='' /></a>
@@ -110,6 +120,7 @@ function Dashboard() {
 								</div>
 							)
 						})}
+						{/* If user subscribed.. */}
 
 					</div>
 
@@ -117,7 +128,7 @@ function Dashboard() {
 						<div className='txt'>
 							<h3>Trending Top 5</h3>
 						</div>
-					{news1.slice(0, 5).map((response1) => {
+					{ setBoolean == undefined ? news1.slice(0, 5).map((response1) => {
 							return (
 								<div className='data-news1'>
 									<a href={response1.url}><img src={response1.urlToImage} className='imgs' alt='' /></a>
@@ -125,7 +136,16 @@ function Dashboard() {
 									<hr/>
 								</div>
 							)
-						})}
+						}) : news1.map((response1) => {
+							return (
+								<div className='data-news1'>
+									<a href={response1.url}><img src={response1.urlToImage} className='imgs' alt='' /></a>
+									<h6 className='h3-heading'>{response1.title}</h6>
+									<hr/>
+								</div>
+							)
+						})
+					}
 					</div>
 				</div>
 

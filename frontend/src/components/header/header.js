@@ -24,6 +24,10 @@ function NavScrollExample() {
 		fetchData()
 	}, [])
 
+	if(value != ""){
+		
+	}
+
 	// const onChangeValue = (e) => {
 	// 	const reValue = ""
 	// 	e.preventDefault()
