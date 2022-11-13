@@ -1,51 +1,50 @@
-.icon{
-    height:7vh !important ;
+.icon {
+	height: 7vh !important ;
 }
-.btn{
-    margin: 10px;
+.btn {
+	margin: 10px;
 }
 .bg-light {
-    background-color: white !important;
-    border-bottom: 1px;
-    border-color: black;
-
+	background-color: white !important;
+	border-bottom: 1px;
+	border-color: black;
 }
 
 a.nav-link {
-    font-size: large;
-    font-weight: bold;
-    color: black;
+	font-size: large;
+	font-weight: bold;
+	color: black;
 }
 
-a.nav-link:hover{
-    color: #dc3545;
+a.nav-link:hover {
+	color: #dc3545;
 }
-.main{
-    border-bottom: 2px solid black;
+.main {
+	border-bottom: 2px solid black;
 }
-.header{
-    margin-top: 60px;
+.header {
+	margin-top: 60px;
 }
-.headerTitles{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Lora",serif;
-    color: rgb(90, 87, 87);
-} 
-.headerTitleSm{
-    position: absolute;
-    top: 25%;
-    font-size: 20px;
-}   
-.headerTitleLg{
-    position: absolute;
-    top: 10%;
-    font-size: 70px;
-}   
-.headerImg{
-    width: 100%;
-    height: 450px;
-    margin-top:90px ;
-    object-fit: cover;
+.headerTitles {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Lora', serif;
+	color: rgb(90, 87, 87);
+}
+.headerTitleSm {
+	position: absolute;
+	top: 25%;
+	font-size: 20px;
+}
+.headerTitleLg {
+	position: absolute;
+	top: 10%;
+	font-size: 70px;
+}
+.headerImg {
+	width: 100%;
+	height: 450px;
+	margin-top: 90px;
+	object-fit: cover;
 }
