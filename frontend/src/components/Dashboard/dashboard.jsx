@@ -28,8 +28,8 @@ function Dashboard({ setBoolean }) {
 		navigate('/subscribe')
 	}
 
-	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4c8c393d068c405a92e2f33f019b09e8`
-	const url1 = `https://newsapi.org/v2/everything?q=trending&apiKey=4c8c393d068c405a92e2f33f019b09e8`
+	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey={YOUR_API_KEY}`
+	const url1 = `https://newsapi.org/v2/everything?q=trending&apiKey={YOUR_API_KEY}`
 	// console.log(categoryData);
 	useEffect(() => {
 		const fetchData = async () => {
