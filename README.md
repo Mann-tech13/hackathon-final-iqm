@@ -3,7 +3,11 @@
 ## Video Demonstration
 
 
-https://user-images.githubusercontent.com/61927733/201511886-42df0e36-c80a-4ea2-9a50-f33d39780713.mp4
+
+
+https://user-images.githubusercontent.com/61927733/201634655-3e6f2fcf-6bfd-4a46-8e71-9093b67f4512.mp4
+
+
 
 
 TCQ is a news aggregator website that smartly curates news from a vast resource of news websites and brings them to the users according to their preferences.
