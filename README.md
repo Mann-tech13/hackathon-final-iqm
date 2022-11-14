@@ -50,3 +50,33 @@ After logging in if a user desires to read more news and get personlaised prefer
 - [Mongo DB](https://www.mongodb.com)
 - [Express JS](https://www.expressjs.org/)
 - [Node JS](https://www.nodejs.org/)
+
+
+## Experience on your PC
+# Experience on your PC
+
+* In the top-right corner of the page, click Fork.
+
+* Now, you will have a fork of the hackathon-final-iqm repository, but you don't have the files in that repository locally on your computer.
+* On GitHub.com, navigate to your fork of the-shopping-stop repository.
+* Above the list of files, click on download Code.
+<p><img src = "https://docs.github.com/assets/cb-20366/images/help/repository/code-button.png" width = 450px></p>
+
+* Open Git Bash.
+* Change the current working directory to the location where you want the cloned directory.
+* Type git clone, and then paste the URL you copied earlier. It will look like this, with your GitHub username instead of YOUR-USERNAME:
+* $ git clone ```https://github.com/YOUR-USERNAME/hackathon-final-iqm```
+* Press Enter. Your local clone will be created.
+* Open the terminal and inside the hackathon-final-iqm/backend directory perform ```npm install```.
+* Give ```node index.js``` in the terminal.
+* You should receve the "DB Connected" message in the terminal.
+* Create and Account on the newsapi.org and get an API key.
+* Replace this key inside the frontend/components/dashboard.js file wherever you find "YOUR_KEY_HERE".
+* Open the second terminal and inside the hackathon-final-iqm/frontend directory perform ```npm install```.
+* Give ```npm start``` in the terminal.
+* Boom ! ```localhost:3000``` has the working site. Keep the backend log open in ```localhost:8000```. (You can find the link from second terminal)
+
+
+
+### Thank you for watching.
+
