@@ -25,9 +25,8 @@
 	font-weight: 200;
 	/* font-size: small; */
 	width: 80%;
-	margin: 0 0 0 -3% ;
+	margin: 0 0 0 -3%;
 	border-right: 2px solid #dc3545;
-
 }
 .h3-heading {
 	padding: 8px;
@@ -39,10 +38,16 @@
 .imgs {
 	border-radius: 1px;
 	width: 95%;
-	height:60%;
+	height: 60%;
 	margin-top: 3px;
 	padding: 1px;
-
+}
+.imgs-sub {
+	border-radius: 1px;
+	width: 300px;
+	height: 38vh;
+	margin-top: 3px;
+	padding: 6px;
 }
 
 .data-news {
@@ -51,14 +56,17 @@
 	margin: 25px 10px 0;
 	border-radius: 10px;
 	padding: 3px;
-	height: 50vh;
-	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	/* height: 100vh; */
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+		rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .content {
 	width: 80%;
 	padding: 15px;
-	font-size: 10px;
+	font-size: 18px;
+	font-weight: 300;
 }
 .bttn {
 	width: 40%;
@@ -67,7 +75,6 @@
 	border-radius: 0.3em;
 	font-family: 'Oswald', sans-serif;
 	margin: 5% 0;
-
 }
 
 .search {
@@ -93,19 +100,17 @@
 	text-align: center;
 }
 
-.dflex{
+.dflex {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin: 0 5%;
-	
 }
-.trending{
+.trending {
 	width: 20%;
 	margin-top: 1%;
-
 }
-.txt{
+.txt {
 	font-family: 'Oswald', sans-serif;
 	color: #dc3545;
 	border-bottom: 2px solid black;

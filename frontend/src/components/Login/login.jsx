@@ -2,8 +2,14 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './login.css'
+import Back from '../../images/background.png'
 
 function Login({ setLoginUser }) {
+	const myStyle = {
+		backgroundImage: `url(${Back})`,
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+	}
 	let navigate = useNavigate()
 	const [user, setUser] = useState({
 		name: '',
@@ -38,7 +44,7 @@ function Login({ setLoginUser }) {
 	// 	console.log(response)
 	// }
 	return (
-		<div className='login'>
+		<div style={myStyle} className='login'>
 			<div className='login-form'>
 				<h1>Login</h1>
 				<input

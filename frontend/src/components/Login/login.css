@@ -77,7 +77,7 @@ input:-internal-autofill-selected {
 }
 
 .login-form > .button {
-	background: linear-gradient(45deg, #f52828, #f52828);
+	background: linear-gradient(45deg, #dc3548, #dc3548);
 	/* color: #fff; */
 	border: none;
 	border-radius: 6px;
