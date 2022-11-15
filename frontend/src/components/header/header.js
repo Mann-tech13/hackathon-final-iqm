@@ -15,16 +15,6 @@ function NavScrollExample() {
 	let navigate = useNavigate()
 	const [value, setValue] = useState('')
 	console.log(value)
-<<<<<<< HEAD
-	
-	
-	useEffect(() => { 
-		// const FetchData = async () => {
-			const data = axios.get('http://localhost:8000/getData')
-			.then((res) => console.log(res))
-			
-		// }
-=======
 	const fetchData = async () => {
 		const { data } = await axios.get('http://localhost:8000/getData')
 		setValue(data)
@@ -33,7 +23,6 @@ function NavScrollExample() {
 
 	useEffect(() => {
 		fetchData()
->>>>>>> 19bcdc3b9fd3b919441b03965f53b2f62a849297
 	}, [])
 
 	const onChangeValue = (e) => {
