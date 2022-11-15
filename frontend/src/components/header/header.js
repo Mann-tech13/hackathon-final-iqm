@@ -15,14 +15,14 @@ function NavScrollExample() {
 	let navigate = useNavigate()
 	const [value, setValue] = useState('')
 	console.log(value)
-	const fetchData = async () => {
-		const { data } = await axios.get('http://localhost:8000/getData')
-		setValue(data)
-		console.log(data)
-	}
-
-	useEffect(() => {
-		fetchData()
+	
+	
+	useEffect(() => { 
+		// const FetchData = async () => {
+			const data = axios.get('http://localhost:8000/getData')
+			.then((res) => console.log(res))
+			
+		// }
 	}, [])
 
 	const onChangeValue = (e) => {

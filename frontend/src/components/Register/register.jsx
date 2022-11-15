@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './register.css'
@@ -20,6 +20,8 @@ function Register() {
 			[name]: value,
 		})
 	}
+	
+	
 	const registration = () => {
 		const { name, email, password, reEnterPassword } = user
 		if (name && email && password && password === reEnterPassword) {

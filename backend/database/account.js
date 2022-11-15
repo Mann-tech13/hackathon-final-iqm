@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const database = express()
 
 mongoose.connect(
-	'mongodb+srv://manush1234:manush1234@cluster0.mtzpusl.mongodb.net/?retryWrites=true&w=majority',
+	'mongodb://localhost:27017/hackathon',
 	{
 		useNewUrlParser: true,
 		useUnifiedTopology: true,

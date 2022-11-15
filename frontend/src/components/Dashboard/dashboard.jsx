@@ -28,8 +28,8 @@ function Dashboard({ setBoolean }) {
 		navigate('/subscribe');
 	};
 
-	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=4c8c393d068c405a92e2f33f019b09e8`
-	const url1 = `https://newsapi.org/v2/everything?q=trending&apiKey=4c8c393d068c405a92e2f33f019b09e8`
+	const url = `https://newsapi.org/v2/everything?q=${categoryData}&apiKey=42d489222eb44f4dbc79860830478903`
+	const url1 = `https://newsapi.org/v2/everything?q=trending&apiKey=42d489222eb44f4dbc79860830478903`
 	// console.log(categoryData);
 	useEffect(() => {
 		const fetchData = async () => {
